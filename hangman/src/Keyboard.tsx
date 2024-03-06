@@ -35,8 +35,8 @@ export function Keyboard(){
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(75px, 1fr))",
             gap: ".5rem",
-          }}>{KEYS.map((key, idx) => {
-            return <button key={idx} className={styles.btn}>{key}</button>
+          }}>{KEYS.map((key) => {
+            return <button key={key} className={styles.btn}>{key}</button>
         })}</div>
     )
 }

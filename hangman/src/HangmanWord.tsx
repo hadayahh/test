@@ -1,6 +1,6 @@
-export function HangmanWord(){
-    const wordToGuess = "hadi"
-    const guessedLetters= ["h", "i", "d"]
+export function HangmanWord({wordToGuess, guessedLetters}){
+    // const wordToGuess = "hadi"
+    // const guessedLetters= ["h", "i", "d"]
 
     return (
         <div
