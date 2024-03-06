@@ -7,6 +7,7 @@ import { Keyboard } from './Keyboard'
 
 
 function App() {
+
   const [wordToGuess, setWordToGuess] = useState(() => {
     return words[Math.floor(Math.random() * words.length)]
   })
@@ -15,16 +16,22 @@ function App() {
   //Ex: useState<string>('') or useState<number>(0)
   //In this Example: useState <string[]>([])
   //An array of strings
-  const [guessedLetter, setGuessedLetter] = useState <string[]>([])
+  const [guessedLetters, setGuessedLetters] = useState <string[]>([])
   console.log(wordToGuess)
-  
+
+  const incorrectLetters = guessedLetters.filter(letter => {
+    !wordToGuess.includes(letter)
+  })
+
+  console.log(incorrectLetters)
+
   return (
     <div style={{maxWidth: '800px', display: 'flex', flexDirection: 'column', gap: '2rem', margin: 'auto', alignItems: 'center'}}>
       <div style={{fontSize: '2rem', textAlign: 'center'}}>Lose Win</div>
-      <HangmanDrawing/>
+      <HangmanDrawing numberOfGuesses={incorrectLetters.length}/>
       <HangmanWord/>
       <div style={{alignSelf: "stretch"}}>
-        <Keyboard/>  
+        <Keyboard />
       </div>
       
     </div>

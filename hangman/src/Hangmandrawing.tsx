@@ -22,7 +22,7 @@ const LEFT_LEG = (
     <div style={{background: "black", height: "10px", width: "100px", position: "absolute", top: "210px", right: 0, rotate:"-60deg", transformOrigin: "right bottom"}}></div>
 )
 
-export function HangmanDrawing(): any{
+export function HangmanDrawing({numberOfGuesses}){
     return (
     <div style={{position: "relative"}}>
         {HEAD}
