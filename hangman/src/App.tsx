@@ -10,21 +10,24 @@ function App() {
 
   const [wordToGuess, setWordToGuess] = useState(() => {
     return 'test'
-    return words[Math.floor(Math.random() * words.length)]
+    // return words[Math.floor(Math.random() * words.length)]
   })
   
-  const [guessedLetters, setGuessedLetters] = useState <string[]>(["t","e"])
+  const [guessedLetters, setGuessedLetters] = useState <string[]>(["g"])
   //explicity defining a type for useState
   //Ex: useState<string>('') or useState<number>(0)
   //In this Example: useState <string[]>([])
   //An array of strings
 
-  console.log(wordToGuess);
-  console.log(guessedLetters);
+  
 
   const incorrectLetters = guessedLetters.filter(letter => {
-    !wordToGuess.includes(letter)
+   return !wordToGuess.includes(letter)
   })
+
+  console.log("wordToGuess:",wordToGuess);
+  console.log("guessedLetters:",guessedLetters);
+  console.log("incorrectLetters:", incorrectLetters)
 
   return (
     <div style={{maxWidth: '800px', display: 'flex', flexDirection: 'column', gap: '2rem', margin: 'auto', alignItems: 'center'}}>
