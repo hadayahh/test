@@ -13,7 +13,7 @@ function App() {
     // return words[Math.floor(Math.random() * words.length)]
   })
   
-  const [guessedLetters, setGuessedLetters] = useState <string[]>(["g"])
+  const [guessedLetters, setGuessedLetters] = useState <string[]>(["g",'a'])
   //explicity defining a type for useState
   //Ex: useState<string>('') or useState<number>(0)
   //In this Example: useState <string[]>([])
