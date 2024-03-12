@@ -1,6 +1,6 @@
 type HangmanWordProps = {
-  wordToGuess: string[],
-  guessedLetters: string
+  wordToGuess: string,
+  guessedLetters: string[]
 }
 
 export function HangmanWord({wordToGuess, guessedLetters}: HangmanWordProps){

@@ -9,8 +9,8 @@ import { Keyboard } from './Keyboard'
 function App() {
 
   const [wordToGuess, setWordToGuess] = useState(() => {
-    return 'test'
-    // return words[Math.floor(Math.random() * words.length)]
+    // return 'test'
+    return words[Math.floor(Math.random() * words.length)]
   })
   
   const [guessedLetters, setGuessedLetters] = useState <string[]>(["g",'a'])
