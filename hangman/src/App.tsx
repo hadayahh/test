@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import words from "./wordList.json"
 
 import {HangmanDrawing} from "./Hangmandrawing"
@@ -57,7 +57,7 @@ function App() {
       <HangmanDrawing numberOfGuesses={incorrectLetters.length}/>
       <HangmanWord wordToGuess={wordToGuess} guessedLetters={guessedLetters}/>
       <div style={{alignSelf: "stretch"}}>
-        <Keyboard />
+        <Keyboard activeLetter={guessedLetters.filter(letter => wordToGuess.includes(letter))} inactiveLetters={incorrectLetters} addGuessedLetter={addGuessedLetter}/>
       </div>
       
     </div>

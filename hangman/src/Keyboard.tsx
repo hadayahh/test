@@ -29,14 +29,20 @@ const KEYS = [
     "z",
   ]
 
-export function Keyboard(){
+  type KeyboardProps = {
+    activeLetter: string[]
+    inactiveLetters: string[] 
+    addGuessedLetter: (letter: string) => void
+  }
+
+export function Keyboard({activeLetter, inactiveLetters, addGuessedLetter}: KeyboardProps){
     return (
         <div style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(75px, 1fr))",
             gap: ".5rem",
           }}>{KEYS.map((key) => {
-            return <button key={key} className={styles.btn}>{key}</button>
+            return <button onClick={() => addGuessedLetter(key)} key={key} className={styles.btn}>{key}</button>
         })}</div>
     )
 }
