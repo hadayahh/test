@@ -30,19 +30,21 @@ const KEYS = [
   ]
 
   type KeyboardProps = {
-    activeLetter: string[]
+    activeLetters: string[]
     inactiveLetters: string[] 
     addGuessedLetter: (letter: string) => void
   }
 
-export function Keyboard({activeLetter, inactiveLetters, addGuessedLetter}: KeyboardProps){
+export function Keyboard({activeLetters, inactiveLetters, addGuessedLetter}: KeyboardProps){
     return (
         <div style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(75px, 1fr))",
             gap: ".5rem",
           }}>{KEYS.map((key) => {
-            return <button onClick={() => addGuessedLetter(key)} key={key} className={styles.btn}>{key}</button>
+            const isActive = activeLetters.includes(key)
+            const isInactive = inactiveLetters.includes(key)
+            return <button disabled={isInactive || isActive} onClick={() => addGuessedLetter(key)} key={key} className={`${styles.btn} ${isActive? styles.active: ''} ${isInactive? styles.isInactive: ''}`}>{key}</button>
         })}</div>
     )
 }
