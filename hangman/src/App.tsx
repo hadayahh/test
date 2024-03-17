@@ -29,7 +29,7 @@ function App() {
     .every(letter => guessedLetters.includes(letter))
 
   function addGuessedLetter(letter: string){
-    if(guessedLetters.includes(letter)) return
+    if(guessedLetters.includes(letter) || isLoser || isWinner) return
 
     setGuessedLetters(currentLetters => [...currentLetters, letter])
   }
@@ -56,7 +56,7 @@ function App() {
     return () => {
       document.removeEventListener('keypress', handler)
     }
-  },[guessedLetters])
+  },[guessedLetters, isWinner, isLoser])
   console.log(guessedLetters)
   return (
     <div style={{maxWidth: '800px', display: 'flex', flexDirection: 'column', gap: '2rem', margin: 'auto', alignItems: 'center'}}>
