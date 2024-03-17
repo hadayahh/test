@@ -62,7 +62,7 @@ function App() {
     <div style={{maxWidth: '800px', display: 'flex', flexDirection: 'column', gap: '2rem', margin: 'auto', alignItems: 'center'}}>
       <div style={{fontSize: '2rem', textAlign: 'center'}}>{isWinner && 'Winner! - Refresh to try again.'} {isLoser && 'Nice Try! - Refresh to try again.'}</div>
       <HangmanDrawing numberOfGuesses={incorrectLetters.length}/>
-      <HangmanWord wordToGuess={wordToGuess} guessedLetters={guessedLetters}/>
+      <HangmanWord reveal={isLoser} wordToGuess={wordToGuess} guessedLetters={guessedLetters}/>
       <div style={{alignSelf: "stretch"}}>
         <Keyboard disabled={isWinner || isLoser} activeLetters={guessedLetters.filter(letter => wordToGuess.includes(letter))} inactiveLetters={incorrectLetters} addGuessedLetter={addGuessedLetter}/>
       </div>
