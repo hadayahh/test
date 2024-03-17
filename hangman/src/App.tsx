@@ -43,6 +43,7 @@ function App() {
     
     const handler = (e: KeyboardEvent) => {
       const key = e.key;
+      console.log(key)
       if(!lettersToCheck.includes(key)) return
        
       e.preventDefault()
