@@ -7,14 +7,14 @@ import { Keyboard } from './Keyboard'
 
 import './App.css';
 
-
+function getWord(){
+  return words[Math.floor(Math.random() * words.length)]
+}
 
 function App() {
 
-  const [wordToGuess, setWordToGuess] = useState(() => {
+  const [wordToGuess, setWordToGuess] = useState(getWord())
     // return 'test'
-    return words[Math.floor(Math.random() * words.length)]
-  })
   
   const [guessedLetters, setGuessedLetters] = useState <string[]>([])
   //explicity defining a type for useState
@@ -60,7 +60,26 @@ function App() {
       document.removeEventListener('keypress', handler)
     }
   },[guessedLetters, isWinner, isLoser])
+  
   console.log(guessedLetters)
+
+  useEffect(() => {
+      const handler = (e: KeyboardEvent) => {
+      const key = e.key;
+      
+      if(key !== "Enter") return
+      e.preventDefault()
+      setGuessedLetters([])
+      setWordToGuess(getWord())
+    }
+    
+    document.addEventListener('keypress', handler)
+
+    return () => {
+      document.removeEventListener('keypress', handler)
+    }
+  },[])
+
   return (
     
     <div style={{maxWidth: '800px', display: 'flex', flexDirection: 'column', gap: '2rem', margin: 'auto', alignItems: 'center'}}>
