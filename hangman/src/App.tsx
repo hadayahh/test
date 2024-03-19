@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect} from 'react'
 import words from "./wordList.json"
 
 import {HangmanDrawing} from "./Hangmandrawing"
@@ -60,7 +60,7 @@ function App() {
       document.removeEventListener('keypress', handler)
     }
   },[guessedLetters, isWinner, isLoser])
-  
+
   console.log(guessedLetters)
 
   useEffect(() => {
@@ -83,6 +83,18 @@ function App() {
   return (
     
     <div style={{maxWidth: '800px', display: 'flex', flexDirection: 'column', gap: '2rem', margin: 'auto', alignItems: 'center'}}>
+      <h1>Things you should know</h1>
+      <ul style={{fontSize: '25px'}}>
+        <li>The object of hangman is to guess the secret word before the stick figure is hung. Players take turns selecting letters to narrow the word down.</li>
+        <li>Players can take turns or work together. Gameplay continues until the players guess the word or they run out of guesses and the stick figure is hung.</li>
+        <li>If you want to play with younger kids, use a snowman instead of a hangman to avoid scaring or offending anyone.</li>
+      </ul>
+      <h1>Rules to consider</h1>
+      <ul style={{fontSize: '25px'}}>
+        <li>The object of hangman is to guess the secret word before the stick figure is hung. Players take turns selecting letters to narrow the word down.</li>
+        <li>Players can take turns or work together. Gameplay continues until the players guess the word or they run out of guesses and the stick figure is hung.</li>
+        <li>If you want to play with younger kids, use a snowman instead of a hangman to avoid scaring or offending anyone.</li>
+      </ul>
       <h3 style={{fontSize: "3rem"}}>Have at it!</h3>
       <div style={{fontSize: '2rem', textAlign: 'center'}}>{isWinner && 'Winner! - Refresh to try again.'} {isLoser && 'Nice Try! - Refresh to try again.'}</div>
       <HangmanDrawing numberOfGuesses={incorrectLetters.length}/>
