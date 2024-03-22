@@ -108,8 +108,9 @@ function App() {
         <li>Players can take turns or work together. Gameplay continues until the players guess the word or they run out of guesses and the stick figure is hung.</li>
         <li>If you want to play with younger kids, use a snowman instead of a hangman to avoid scaring or offending anyone.</li>
       </ul> */}
+      {/* integrate swal alert for winner and loser instead */}
       <h3 style={{fontSize: "3rem"}}>Have at it!</h3>
-      <div style={{fontSize: '2rem', textAlign: 'center'}}>{isWinner && 'Winner! - Refresh to try again.'} {isLoser && 'Nice Try! - Refresh to try again.'}</div>
+      <div style={{fontSize: '3rem', textAlign: 'center', fontFamily: "sans-serif", color: 'black'}}>{isWinner && 'Winner! - Refresh to try again.'} {isLoser && 'Nice Try! - Refresh to try again.'}</div>
       <HangmanDrawing numberOfGuesses={incorrectLetters.length}/>
       <HangmanWord reveal={isLoser} wordToGuess={wordToGuess} guessedLetters={guessedLetters}/>
       <div style={{alignSelf: "stretch"}}>
