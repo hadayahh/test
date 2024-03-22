@@ -1,0 +1,61 @@
+html{
+    background-color: rgb(66, 197, 245);
+    font-family: "Epilogue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+ul{
+    padding-left: 0;
+}
+
+li {
+    padding-top: 15px;
+    padding-bottom: 40px;
+    list-style: none;
+}
+
+button#button{
+  background-color: #04AA6D; /* Green */
+  border: solid black;
+  color: white;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: block;
+  font-size: 30px;
+  border-radius: 15px;
+  margin-top: 40px;
+}
+
+button#button:hover{
+    cursor: pointer;
+}
+
+.swal-text{
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.swal-button{
+    font-size: 25px;
+    font-family: "Epilogue", sans-serif;
+    color: black
+}
+
+.swal-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.swal-modal{
+    background-color: #04AA6D;
+    border-radius: 50px;
+    border: solid black;
+}
+
+.swal-button-container{
+    border: solid black;
+    border-radius: 10px;
+    bottom: 10px
+}
