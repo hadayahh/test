@@ -9,6 +9,7 @@ import './App.css';
 
 import swal from 'sweetalert';
 
+
 function share(): void {
   let url = document.location.href;
   const cb = navigator.clipboard;
@@ -100,8 +101,16 @@ function App() {
   },[])
 
   return (
-    
     <div style={{maxWidth: '1100px', display: 'flex', flexDirection: 'column', gap: '2rem', margin: 'auto', alignItems: 'center'}}>
+      <div style={{marginTop: '50px '}}>
+        <span style={{color: 'red', fontSize: '6rem', letterSpacing: '27px'}}>H</span>
+        <span style={{color: 'yellow', fontSize: '6rem', letterSpacing: '27px'}}>A</span>
+        <span style={{color: 'orange', fontSize: '6rem', letterSpacing: '27px'}}>N</span>
+        <span style={{color: 'red', fontSize: '6rem', letterSpacing: '27px'}}>G</span>
+        <span style={{color: 'orange', fontSize: '6rem', letterSpacing: '27px'}}>M</span>
+        <span style={{color: 'yellow', fontSize: '6rem', letterSpacing: '27px'}}>A</span>
+        <span style={{color: 'red', fontSize: '6rem'}}>N</span>
+      </div>
       <h1 style={{fontSize: "3rem"}}>Things you should consider</h1>
       <ul style={{fontSize: '25px'}}>
         <li>The objective of hangman is to guess the secret word before the stick figure is hung.</li>
@@ -116,7 +125,7 @@ function App() {
       <div style={{alignSelf: "stretch"}}>
         <Keyboard disabled={isWinner || isLoser} activeLetters={guessedLetters.filter(letter => wordToGuess.includes(letter))} inactiveLetters={incorrectLetters} addGuessedLetter={addGuessedLetter}/>
       </div>
-      <button id= 'button' onClick={() => share()}>Share with friends!</button>
+      <button style={{marginBottom: '50px'}} id= 'button' onClick={() => share()}>Share with friends!</button>
     </div>
   )
 }
