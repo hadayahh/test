@@ -102,23 +102,37 @@ function App() {
 
   return (
     <div style={{maxWidth: '1100px', display: 'flex', flexDirection: 'column', gap: '2rem', margin: 'auto', alignItems: 'center'}}>
-      <div style={{marginTop: '50px '}}>
+      <div className='main-heading' style={{marginTop: '50px '}}>
         <span style={{color: 'red', fontSize: '6rem', letterSpacing: '27px'}}>H</span>
-        <span style={{color: 'yellow', fontSize: '6rem', letterSpacing: '27px'}}>A</span>
-        <span style={{color: 'orange', fontSize: '6rem', letterSpacing: '27px'}}>N</span>
+        <span style={{color: '#d6d62b', fontSize: '6rem', letterSpacing: '27px'}}>A</span>
+        <span style={{color: '#ab6f0c', fontSize: '6rem', letterSpacing: '27px'}}>N</span>
         <span style={{color: 'red', fontSize: '6rem', letterSpacing: '27px'}}>G</span>
-        <span style={{color: 'orange', fontSize: '6rem', letterSpacing: '27px'}}>M</span>
-        <span style={{color: 'yellow', fontSize: '6rem', letterSpacing: '27px'}}>A</span>
-        <span style={{color: 'red', fontSize: '6rem'}}>N</span>
+        <span style={{color: '#ab6f0c', fontSize: '6rem', letterSpacing: '27px'}}>M</span>
+        <span style={{color: '#d6d62b', fontSize: '6rem', letterSpacing: '27px'}}>A</span>
+        <span style={{color: 'red', fontSize: '6rem', letterSpacing: '27px'}}>N</span>
       </div>
-      <h1 style={{fontSize: "3rem"}}>Things you should consider</h1>
+      <div className='sub-heading'>
+        <span>l</span>
+        <span>a</span>
+        <span>u</span>
+        <span>n</span>
+        <span>d</span>
+        <span>r</span>
+        <span>y</span>
+        <span>-</span>
+        <span>r</span>
+        <span>u</span>
+        <span>n</span>
+        <span>s</span>
+      </div>
+      <h1 style={{fontSize: "3rem", color:'#573805'}}>Things you should consider</h1>
       <ul style={{fontSize: '25px'}}>
         <li>The objective of hangman is to guess the secret word before the stick figure is hung.</li>
         <li>Players take turns selecting letters to narrow the word down, you may choose to play solo as well.</li>
         <li>Gameplay continues until the players guess the word or they run out of guesses and the stick figure is hung.</li>
         <li>Feel free to refresh the browser should you want to tackle a shorter word in length.</li>
       </ul>
-      <h3 style={{fontSize: "3rem"}}>Have at it!</h3>
+      <h3 style={{fontSize: "3rem", color: '#573805'}}>Have at it!</h3>
       {isWinner? winner() : null} {isLoser? loser() : null}
       <HangmanDrawing numberOfGuesses={incorrectLetters.length}/>
       <HangmanWord reveal={isLoser} wordToGuess={wordToGuess} guessedLetters={guessedLetters}/>
