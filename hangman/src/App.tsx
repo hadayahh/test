@@ -4,11 +4,11 @@ import words from "./wordList.json"
 import { HangmanDrawing } from "./Hangmandrawing"
 import { HangmanWord } from './HangmanWord'
 import { Keyboard } from './Keyboard'
+import { SoundFile } from './SoundFile'
 
 import './App.css';
 
 import swal from 'sweetalert';
-
 
 function share(): void {
   let url = document.location.href;
@@ -101,7 +101,10 @@ function App() {
   },[])
 
   return (
+    <>
+    
     <div style={{maxWidth: '1100px', display: 'flex', flexDirection: 'column', gap: '2rem', margin: 'auto', alignItems: 'center'}}>
+    
       <div className='main-heading' style={{marginTop: '50px '}}>
         <span style={{color: 'red', fontSize: '6rem', letterSpacing: '27px'}}>H</span>
         <span style={{color: '#d6d62b', fontSize: '6rem', letterSpacing: '27px'}}>A</span>
@@ -136,11 +139,13 @@ function App() {
       {isWinner? winner() : null} {isLoser? loser() : null}
       <HangmanDrawing numberOfGuesses={incorrectLetters.length}/>
       <HangmanWord reveal={isLoser} wordToGuess={wordToGuess} guessedLetters={guessedLetters}/>
-      <div style={{alignSelf: "stretch"}}>
+      <div className='keyboard' style={{alignSelf: "stretch"}}>
         <Keyboard disabled={isWinner || isLoser} activeLetters={guessedLetters.filter(letter => wordToGuess.includes(letter))} inactiveLetters={incorrectLetters} addGuessedLetter={addGuessedLetter}/>
       </div>
       <button style={{marginBottom: '50px'}} id= 'button' onClick={() => share()}>Share with friends!</button>
     </div>
+    <SoundFile/>
+    </>
   )
 }
 
